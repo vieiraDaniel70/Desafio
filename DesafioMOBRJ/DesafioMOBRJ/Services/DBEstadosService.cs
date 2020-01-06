@@ -16,20 +16,26 @@ namespace DesafioMOBRJ.Services
         {
             conexao = new SQLiteConnection(caminho);
             conexao.CreateTable<ClasseEstado>();
-            
+            conexao.CreateTable<Fields>();
         }
     
         public void SalvarDados(ClasseEstado estado)
         {
             try
             {
-                int resultado = conexao.Insert(estado);
-                this.MensagemStatus = string.Format("{0} registro incluídos", resultado);
+                int estados = conexao.Insert(estado);
+                int campos = conexao.Insert(estado.fields);
             }
             catch(Exception e)
             {
                 throw new Exception(e.Message); 
             }
+        }
+    
+        public void DeletarDados()
+        {
+            conexao.DeleteAll<ClasseEstado>();
+            conexao.DeleteAll<Fields>();
         }
     }
 }

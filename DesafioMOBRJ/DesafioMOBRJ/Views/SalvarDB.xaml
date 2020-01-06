@@ -4,7 +4,7 @@
              x:Class="DesafioMOBRJ.Views.SalvarDB"
              Title="Salvar Dados">
     <StackLayout>
-        <Button Text="Carregar Dados" Clicked="Button_Clicked2" />
+        <Button Text="Salvar Dados" Clicked="Button_Clicked2" />
         <Label x:Name="lblmsgSDB" TextColor="Red" FontSize="20" 
                IsVisible="False"  HorizontalOptions="Center" VerticalOptions="Center"/>
         <ListView x:Name="lvwEstadosSDB"
@@ -41,6 +41,5 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Text="Salvar Dados" Clicked="Button_Clicked3" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand"/>
     </StackLayout>
 </ContentPage>     

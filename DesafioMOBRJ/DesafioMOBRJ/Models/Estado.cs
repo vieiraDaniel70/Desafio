@@ -35,10 +35,8 @@ namespace DesafioMOBRJ.Models
             public Full full { get; set; }
         }
 
-        [Table("Anexo")]
         public class Attachment
         {
-            [PrimaryKey]
             public string id { get; set; }
             public string url { get; set; }
             public string filename { get; set; }
@@ -52,7 +50,9 @@ namespace DesafioMOBRJ.Models
         public class Fields
         {
             [PrimaryKey]
+            public string IdFields { get; set; }
             public string Sigla { get; set; }
+            [Ignore]
             public List<Attachment> Attachments { get; set; }
             public string Estado { get; set; }
             public string Capital { get; set; }
@@ -70,10 +70,6 @@ namespace DesafioMOBRJ.Models
             [Ignore]
             public DateTime createdTime { get; set; }
 
-            internal object ToLower()
-            {
-                throw new NotImplementedException();
-            }
             //[JsonProperty("Regiao")]
             //public string ImageUrl { get; set; }
         }

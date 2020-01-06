@@ -22,15 +22,16 @@ namespace DesafioMOBRJ.Views
 
         private async void Button_Clicked2(object sender, EventArgs e)
         {
-            List<ClasseEstado> usuarios = await userService.GetUsuariosRegiaoAsync();
-            dados.SalvarDados(usuarios[20]);
-            await DisplayAlert("Inserido", dados.MensagemStatus, "OK");
+            List<ClasseEstado> estados = await userService.GetUsuariosRegiaoAsync();
+            dados.DeletarDados();
+            foreach (ClasseEstado u in estados )
+            {
+                dados.SalvarDados(u);
+            }
+            
+            await DisplayAlert("", "Dados Salvos", "OK");
 
         }
 
-        private void Button_Clicked3(object sender, EventArgs e)
-        {
-
-        }
     }
 }
