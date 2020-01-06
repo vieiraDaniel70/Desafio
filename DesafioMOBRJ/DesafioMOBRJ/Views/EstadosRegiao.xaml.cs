@@ -19,9 +19,10 @@ namespace DesafioMOBRJ.Views
         public EstadosRegiao()
         {
             InitializeComponent();
+            PreencherListviewPorRegiao();
         }
 
-        private async void Button_Clicked_1(object sender, EventArgs e)
+        public async void PreencherListviewPorRegiao()
         {
             List<ClasseEstado> usuarios = await userService.GetUsuariosRegiaoAsync();
             if (usuarios == null)

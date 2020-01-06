@@ -1,8 +1,11 @@
 ﻿using DesafioMOBRJ.Models;
 using DesafioMOBRJ.Services;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static DesafioMOBRJ.Models.Estado;
 
 namespace DesafioMOBRJ.Views
 {
@@ -15,9 +18,10 @@ namespace DesafioMOBRJ.Views
         public EstadoPage()
         {
             InitializeComponent();
+            PreencherListview();
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        public async void PreencherListview()
         {
             Estado usuarios = await userService.GetUsuariosAsync();
             if (usuarios == null)
@@ -26,30 +30,22 @@ namespace DesafioMOBRJ.Views
                 lblmsg.IsVisible = true;
                 lblmsg.Text = "Não foi possível retornar a lista de usuários";
                 lblmsg.TextColor = Color.Red;
-            
+
             }
             else
             {
                 lvwEstados.IsVisible = true;
                 lblmsg.IsVisible = false;
                 lvwEstados.ItemsSource = usuarios.records;
-            } 
-        }
-        private async void lvwEstados_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            /*
-            if (e.SelectedItem == null)
-                return;
-            var usuario = e.SelectedItem as Estado;
-            lvwEstados.SelectedItem = null;
-            await Navigation.PushAsync(new EstadoDetailsPage(usuario));
-        
-        */
+            }
         }
 
-        private void lvwEstados_ItemTapped(object sender, ItemTappedEventArgs e)
+        private async void EstadoSearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            List<ClasseEstado> usuarios = await userService.GetUsuariosRegiaoAsync();
+            var texto = EstadoSearchBar.Text;
+            var r = usuarios.Where(x => x.fields.Estado.ToLower().Contains(texto.ToLower()) || x.fields.Capital.ToLower().Contains(texto.ToLower()));
+            lvwEstados.ItemsSource = r;
         }
     }
 }

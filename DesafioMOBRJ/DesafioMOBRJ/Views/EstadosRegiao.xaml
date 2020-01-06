@@ -4,7 +4,6 @@
              x:Class="DesafioMOBRJ.Views.EstadosRegiao"
              Title="Estados por região">
     <StackLayout>
-        <Button Text="Exibir Estados" Clicked="Button_Clicked_1" />
         <Label x:Name="lblmsgRegiao" TextColor="Red" FontSize="20" 
                IsVisible="False"  HorizontalOptions="Center" VerticalOptions="Center"/>
         <ListView x:Name="lvwEstadosRegiao"

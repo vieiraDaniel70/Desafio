@@ -69,6 +69,11 @@ namespace DesafioMOBRJ.Models
             public Fields fields { get; set; }
             [Ignore]
             public DateTime createdTime { get; set; }
+
+            internal object ToLower()
+            {
+                throw new NotImplementedException();
+            }
             //[JsonProperty("Regiao")]
             //public string ImageUrl { get; set; }
         }
