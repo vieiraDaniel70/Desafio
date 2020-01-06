@@ -41,5 +41,13 @@ namespace DesafioMOBRJ.Views
                 lvwEstadosRegiao.ItemsSource = r;
             }
         }
+
+        private async void Picker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<ClasseEstado> usuarios = await userService.GetUsuariosRegiaoAsync();
+            var texto = pckRegiao.Items[pckRegiao.SelectedIndex];
+            var r = usuarios.Where(x => x.fields.Regiao.ToLower().Contains(texto.ToLower()));
+            lvwEstadosRegiao.ItemsSource = r;
+        }
     }
 }

@@ -4,6 +4,16 @@
              x:Class="DesafioMOBRJ.Views.EstadosRegiao"
              Title="Estados por região">
     <StackLayout>
+        <Picker x:Name="pckRegiao" Title="Selecione a região"
+        TitleColor="Blue" SelectedIndexChanged="Picker_SelectedIndexChanged">
+            <Picker.Items>
+                <x:String>Centro-Oeste</x:String>
+                <x:String>Nordeste</x:String>
+                <x:String>Norte</x:String>
+                <x:String>Sudeste</x:String>
+                <x:String>Sul</x:String>
+            </Picker.Items>
+        </Picker>
         <Label x:Name="lblmsgRegiao" TextColor="Red" FontSize="20" 
                IsVisible="False"  HorizontalOptions="Center" VerticalOptions="Center"/>
         <ListView x:Name="lvwEstadosRegiao"
