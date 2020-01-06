@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DesafioMOBRJ.Views.EstadoDetailsPage"
+             Title="Estado">
+    <StackLayout Padding="2">
+        <Frame>
+            <Label Text="{Binding id}" FontSize="Medium" 
+               HorizontalOptions="Center" TextColor="Blue" />
+        </Frame>
+        <Label Text="Dados" TextColor="Blue"/>
+        <Frame OutlineColor="Accent">
+            <StackLayout>
+                <!--<Label Text="{Binding fields.Sigla}" FontSize="Default" />
+                <Label Text="{Binding fields.Estado}" FontSize="Default" />
+                <Label Text="{Binding fields.Capital}" FontSize="Default" />
+                <Label Text="{Binding fields.Regiao}" FontSize="Default" />
+                -->
+                </StackLayout>
+        </Frame>
+      <!--
+        <Label Text="Localização : Latitue/Longitude" TextColor="Blue"/>
+        <Frame OutlineColor="Accent">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="{Binding address.geo.lat}" FontSize="Default" HorizontalOptions="StartAndExpand"/>
+                <Label Text="{Binding address.geo.lng}" FontSize="Default" HorizontalOptions="EndAndExpand" />
+            </StackLayout>
+        </Frame>
+        <Label Text="Telefone/webSite" TextColor="Blue"/>
+        <Frame OutlineColor="Accent">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="{Binding phone}" FontSize="Default" HorizontalOptions="StartAndExpand" />
+                <Label Text="{Binding website}" FontSize="Default" HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+        </Frame>
+        <Label Text="Empresa" TextColor="Blue"/>
+        <Label Text="{Binding company.name}" FontSize="Default" />
+        <Label Text="{Binding company.catchPhrase}" FontSize="Default"  />
+        <Label Text="{Binding company.bs}" FontSize="Default" />
+    -->
+        </StackLayout>
+</ContentPage>
