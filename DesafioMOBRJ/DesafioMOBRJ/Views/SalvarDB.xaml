@@ -5,10 +5,12 @@
              Title="Salvar Dados">
     <StackLayout>
         <Button Text="Salvar Dados" Clicked="Button_Clicked2" />
+        <Label Text="Recuperar dados" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center"/>
+        <Switch IsToggled="False" Toggled="Switch_Toggled" OnColor="Blue" ThumbColor="Gray" HorizontalOptions="Center"/>
         <Label x:Name="lblmsgSDB" TextColor="Red" FontSize="20" 
-               IsVisible="False"  HorizontalOptions="Center" VerticalOptions="Center"/>
+               IsVisible="True"  HorizontalOptions="Center" VerticalOptions="Center"/>
         <ListView x:Name="lvwEstadosSDB"
-              HasUnevenRows="True" SelectionMode="None">
+              HasUnevenRows="True" SelectionMode="None" IsVisible="False">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

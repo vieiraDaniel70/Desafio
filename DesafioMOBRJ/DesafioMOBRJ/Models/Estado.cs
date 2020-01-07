@@ -47,10 +47,10 @@ namespace DesafioMOBRJ.Models
 
         [Table("Campos")]
 
-        public class Fields
+        public class Fields 
         {
-            [PrimaryKey]
-            public string IdFields { get; set; }
+            [PrimaryKey, AutoIncrement]
+            public int IdFields { get; set; }
             public string Sigla { get; set; }
             [Ignore]
             public List<Attachment> Attachments { get; set; }
@@ -63,7 +63,8 @@ namespace DesafioMOBRJ.Models
 
         public class ClasseEstado
         {
-            [PrimaryKey]
+            [PrimaryKey, AutoIncrement]
+            public int idClasseEstado { get; set; }
             public string id { get; set; }
             [Ignore]
             public Fields fields { get; set; }

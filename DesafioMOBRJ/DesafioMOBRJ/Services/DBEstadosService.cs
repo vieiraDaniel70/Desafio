@@ -35,7 +35,22 @@ namespace DesafioMOBRJ.Services
         public void DeletarDados()
         {
             conexao.DeleteAll<ClasseEstado>();
+            //conexao.DropTable<ClasseEstado>();
             conexao.DeleteAll<Fields>();
+            //conexao.DropTable<Fields>();
         }
+
+        public List<Fields> ListarDadosCamposDB()
+        {
+            List<Fields> c = conexao.Table<Fields>().ToList();
+
+            return c;
+        }
+
+        public List<ClasseEstado> ListarDadosEstadosDB()
+        {
+            List<ClasseEstado> e = conexao.Table<ClasseEstado>().ToList();
+            return e;
+        } 
     }
 }
